@@ -1,0 +1,56 @@
+.landingpage{
+  background: white url('./Assets/landing-image.avif') no-repeat scroll center;
+  height: 80vh;
+  background-size: cover;
+  color: white;
+}
+.f{
+  font-family: Bangla MN;
+}
+.wrapper{
+  background-color: rgba(0,0,0,0.2);
+  height: 100%;
+}
+
+.img-text{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.custom-file-input{
+  opacity: 1;
+}
+
+ul li {
+    list-style-type: none;
+}
+.margin{
+  margin-top: 80px;
+}
+
+
+.title-color{
+  color: darkgreen;
+}
+
+.infor-color{
+  color: darkolivegreen;
+}
+
+.nav-color{
+  background-color: seagreen;
+}
+
+
+
+.numsize{
+  background: #FF7A59;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+justify-content: center;
+font-weight: bolder;}
