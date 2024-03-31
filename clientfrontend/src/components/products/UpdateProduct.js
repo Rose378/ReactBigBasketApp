@@ -45,7 +45,7 @@ const UpdateProduct = () => {
                 info:'',
     })
     useEffect(() => {
-        let dataUrl = `http://127.0.0.1:5000/api/products/${id}`
+        let dataUrl = `http://127.0.0.1:9000/api/products/${id}`
         axios.get(dataUrl).then((res) => {
            prodData({
             ...data,
@@ -94,7 +94,7 @@ const UpdateProduct = () => {
     const navigate = useNavigate()
     function submitupdate(e){
         e.preventDefault();
-        axios.put( `http://127.0.0.1:5000/api/products/${id}` , data).then(() => {
+        axios.put( `http://127.0.0.1:9000/api/products/${id}` , data).then(() => {
             navigate('/ProductAdmin')
             
         }).catch((err) => {
