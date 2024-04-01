@@ -19,12 +19,18 @@ const bodyParser = require('body-parser');
 dotenv.config({path:'./config/config.env'});
 
 //cors config
-app.use(cors({
-    origin: 'https://rose-bigbasket.netlify.app', // Update with your Netlify app URL
-    methods: ['GET', 'POST'], // Specify allowed HTTP methods
-    allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
-  }))
+// app.use(cors({
+//     origin: 'https://rose-bigbasket.netlify.app', // Update with your Netlify app URL
+//     methods: ['GET', 'POST'], // Specify allowed HTTP methods
+//     allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
+//   }))
 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://rose-bigbasket.netlify.app');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+  });
 // Express 4.0
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
@@ -32,15 +38,12 @@ app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 
 const PORT = process.env.PORT || 9000;
 // console.log('server started on port:', PORT, ip.address());
-app.get('/' , (request,response) => {
+app.get('/api' , (request,response) => {
     response.send('Welcome to express serverr by ROSEMARY')
 });
 
 //connect to mongo db database
-mongoose.connect(process.env.MONGODB_PROD_URL , {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).then(()=>{
+mongoose.connect(process.env.MONGODB_PROD_URL).then(()=>{
     console.log('connected to DB sucessfully......')
 }).catch((err) => {
     console.error(err);
@@ -50,7 +53,7 @@ mongoose.connect(process.env.MONGODB_PROD_URL , {
 
    
 //configure thw router
-app.use('/api' , require('./functions/apirouter'));
+app.use('/' , require('./functions/apirouter'));
 
 app.use(express.static(path.join(__dirname, '/Users/suresh/Desktop/RoseMaryReactApps/ClientsideBIGBASKETapp/ReactBigBasketApp/clientfrontend/build')));
 
