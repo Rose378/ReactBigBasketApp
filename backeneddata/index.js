@@ -3,12 +3,18 @@ const app = express();
 const dotenv = require('dotenv');
 const cors = require('cors')
 const path = require('path')
-const ip = require('ip');
+// const ip = require('ip');
 
 //mongodbconnect
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
+
+// app.get('/', (req, res) => {
+//     const ip = req.ip; // This retrieves the IP address of the client making the request
+//     res.send(`Your IP address is: ${ip}`);
+//     console.log(ip)
+//   });
 //configure dotenv
 dotenv.config({path:'./config/config.env'});
 
@@ -25,7 +31,7 @@ app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 
 
 const PORT = process.env.PORT || 9000;
-console.log('server started on port:', PORT, ip.address());
+// console.log('server started on port:', PORT, ip.address());
 app.get('/' , (request,response) => {
     response.send('Welcome to express serverr by ROSEMARY')
 });

@@ -63,7 +63,7 @@ base64Image = (imageFile) => {
 //submit to server
 submitProduct = (event) => {
     event.preventDefault();
-    let dataUrl = `http://127.0.0.1:9000/api/products/`
+    let dataUrl = `https://reactbigbasketapp.onrender.com/api/products/`
     
     axios.post(dataUrl , this.state.product).then(() => {
     this.setState({

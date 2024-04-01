@@ -12,7 +12,7 @@ class ProductList extends React.Component{
     }
 
     componentDidMount(){
-        let dataUrl = `http://127.0.0.1:9000/api/products/`;
+        let dataUrl = `https://reactbigbasketapp.onrender.com/api/products/`;
         axios.get(dataUrl).then((res) => {
             this.setState({
                 products: res.data
