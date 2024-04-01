@@ -3,8 +3,8 @@
   command = "npm run build"  
   publish = "clientfrontend/build" 
 
+[[build]]
   command = "npm start"  
-  publish = "backeneddata/dist"  
   functions = "functions"  
   deploy = { command = "netlify deploy --prod" }
 
