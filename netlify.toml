@@ -4,7 +4,7 @@
   publish = "clientfrontend/build" 
 
 [[build]]
-  functions = "functions"  
+  functions = "/Users/suresh/Desktop/RoseMaryReactApps/ClientsideBIGBASKETapp/ReactBigBasketApp/backeneddata/functions"  
   deploy = { command = "netlify deploy --prod" }
 
 
