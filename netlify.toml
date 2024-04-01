@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build"        
+  command = "cd clientfrontend && npm run build"  # Change directory to frontend and run build
   publish = "clientfrontend/build"       
   functions = "backeneddata/functions" 
 
@@ -7,3 +7,4 @@
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
+
