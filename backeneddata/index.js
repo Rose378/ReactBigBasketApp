@@ -47,6 +47,14 @@ mongoose.connect(process.env.MONGODB_PROD_URL , {
     process.exit(1) //will stop node js process if unable o connect to DB
 });
 
+// Middleware to enable CORS
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://rose-bigbasket.netlify.app');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+  });
+   
 //configure thw router
 app.use('/api' , require('./functions/apirouter'));
 
