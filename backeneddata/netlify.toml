@@ -1,9 +1,13 @@
-
+[[build]]
+  dir = "clientfrontend"     
+  command = "npm run build"  
+  publish = "clientfrontend/build" 
 
 [build]
-  command = "npm run build"  # Or any other build command if needed
-  publish = "dist"  # Or the directory containing your built files
-  functions = "functions"  # If you have serverless functions
+  dir = "backeneddata"     
+  command = "npm start"  
+  publish = "dist"  
+  functions = "functions"  
   deploy = { command = "netlify deploy --prod" }
 
 

@@ -44,10 +44,10 @@ mongoose.connect(process.env.MONGODB_PROD_URL , {
 //configure thw router
 app.use('/api' , require('./functions/apirouter'));
 
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'clientfrontend/build')));
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'clientfrontend/build', 'index.html'));
 });
 
 // app.listen(PORT,host,()=> {
