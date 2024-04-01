@@ -4,7 +4,6 @@
   publish = "clientfrontend/build" 
 
 [[build]]
-  command = "npm start"  
   functions = "functions"  
   deploy = { command = "netlify deploy --prod" }
 
