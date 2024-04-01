@@ -1,11 +1,14 @@
 [build]
-  dir = "clientfrontend"     
-  command = "npm run build"  
-  publish = "clientfrontend/build" 
+  dir = "clientfrontend"
+  command = "npm run build"
+  publish = "clientfrontend/build"
 
-[[build]]
-  functions = "backeneddata/functions"  
-  deploy = { command = "netlify deploy --prod" }
+[build.environment]
+  FUNCTIONS_DIR = "backeneddata/functions" # Define the directory for serverless functions
+
+[deploy]
+  command = "netlify deploy --prod"
+
 
 
  
