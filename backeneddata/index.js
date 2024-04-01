@@ -42,7 +42,7 @@ mongoose.connect(process.env.MONGODB_PROD_URL , {
 });
 
 //configure thw router
-app.use('/api' , require('./router/apirouter'));
+app.use('/api' , require('./functions/apirouter'));
 
 app.use(express.static(path.join(__dirname, 'build')));
 
