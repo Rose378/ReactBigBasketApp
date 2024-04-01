@@ -5,7 +5,7 @@
 
   dir = "backeneddata"     
   command = "npm start"  
-  publish = "dist"  
+  publish = "backeneddata/dist"  
   functions = "functions"  
   deploy = { command = "netlify deploy --prod" }
 
