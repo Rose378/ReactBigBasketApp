@@ -4,6 +4,8 @@ const serverless = require('serverless-http');
 const app = express();
 const Product = require('../models/product');
 
+
+
 //get all employees
 router.get('/products' , async(req,res) => {
     try{
@@ -118,7 +120,13 @@ router.delete('/products/:id' , async(req,res) => {
 })
 
 
-app.use('/.netlify/functions/api' , router)
-module.exports.handler = serverless(app)
-module.exports = router
+app.use('/.netlify/functions/api/' , router)
+
+const handler = serverless(app);
+module.exports.handler = async (event, context) => {
+    // Use handler function to invoke Express app
+    return await handler(event, context);
+  };
+
+module.exports = router;
 
