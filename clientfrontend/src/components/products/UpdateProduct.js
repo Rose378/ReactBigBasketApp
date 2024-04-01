@@ -56,7 +56,7 @@ const UpdateProduct = () => {
            })
     })
   
-    },[])
+    },[data,id])
 
     const changeInput = (event) => {
         event.preventDefault();
