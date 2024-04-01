@@ -1,7 +1,10 @@
 
 
-  [build]
-functions = "functions"
+[build]
+  command = "npm run build"  # Or any other build command if needed
+  publish = "dist"  # Or the directory containing your built files
+  functions = "functions"  # If you have serverless functions
+  deploy = { command = "netlify deploy --prod" }
 
 
  
